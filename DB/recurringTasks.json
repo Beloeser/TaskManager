@@ -1,0 +1,32 @@
+[
+  {
+    "name": "AoC",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 2,
+    "time": "17:00"
+  },
+  {
+    "name": "Calculo",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 0,
+    "time": "13:00"
+  },
+  {
+    "name": "Calculo",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 2,
+    "time": "13:00"
+  }
+]
