@@ -27,18 +27,32 @@ class CalendarPage:
                  bg=Colors.ACCENT, fg=Colors.TEXT_PRIMARY, font=("Arial", 10, "bold"),
                  activebackground=Colors.ACCENT_HOVER).pack(side="left", padx=10)
         
-        scrollFrame = ScrollableFrame(self.parent)
-        scrollFrame.pack(fill="both", expand=True, padx=10, pady=10)
+        # Create main frame for columns
+        columnsFrame = tk.Frame(self.parent, bg=Colors.BG_PRIMARY)
+        columnsFrame.pack(fill="both", expand=True, padx=10, pady=10)
         
         weekTasks = self.taskManager.getWeekTasks(self.app.weekOffset)
-        for day, tasks in weekTasks.items():
-            dayFrame = tk.Frame(scrollFrame.scrollableFrame, bg=Colors.BG_TERTIARY, relief="solid", bd=1)
-            dayFrame.pack(fill="x", pady=5, padx=10)
+        
+        # Create columns for each day
+        for dayKey, tasks in weekTasks.items():
+            dayColumn = tk.Frame(columnsFrame, bg=Colors.BG_SECONDARY, relief="solid", bd=1)
+            dayColumn.pack(side="left", fill="both", expand=True, padx=2)
             
-            tk.Label(dayFrame, text=day, font=("Arial", 12, "bold"), 
-                    fg=Colors.TEXT_PRIMARY, bg=Colors.BG_TERTIARY).pack(anchor="w", padx=10, pady=5)
+            # Day header with date
+            tk.Label(dayColumn, text=dayKey, font=("Arial", 12, "bold"), 
+                    bg=Colors.ACCENT, fg=Colors.TEXT_PRIMARY).pack(fill="x", pady=2)
             
-            sortedTasks = sorted(tasks, key=lambda x: x.time)
-            for task in sortedTasks:
-                tk.Label(dayFrame, text=f"  {task.time} - {task.name}",
-                        font=("Arial", 14, "bold"), fg=Colors.TEXT_PRIMARY, bg=Colors.BG_TERTIARY).pack(anchor="w", padx=20)
+            # Tasks for this day
+            if tasks:
+                sortedTasks = sorted(tasks, key=lambda x: x.time)
+                for task in sortedTasks:
+                    taskFrame = tk.Frame(dayColumn, bg=Colors.BG_TERTIARY, relief="solid", bd=1)
+                    taskFrame.pack(fill="x", padx=5, pady=2)
+                    
+                    tk.Label(taskFrame, text=f"{task.time}", font=("Arial", 9, "bold"), 
+                            fg=Colors.TEXT_PRIMARY, bg=Colors.BG_TERTIARY).pack(anchor="w", padx=5)
+                    tk.Label(taskFrame, text=task.name, font=("Arial", 8), 
+                            fg=Colors.TEXT_PRIMARY, bg=Colors.BG_TERTIARY, wraplength=100).pack(anchor="w", padx=5)
+                    if hasattr(task, 'origin'):
+                        tk.Label(taskFrame, text=task.origin.name, font=("Arial", 7), 
+                                fg=Colors.TEXT_SECONDARY, bg=Colors.BG_TERTIARY).pack(anchor="w", padx=5)

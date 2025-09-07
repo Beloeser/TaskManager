@@ -28,5 +28,95 @@
     "type": "recurring",
     "weekDay": 2,
     "time": "13:00"
+  },
+  {
+    "name": "IDB",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 0,
+    "time": "09:25"
+  },
+  {
+    "name": "IDB",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 2,
+    "time": "09:25"
+  },
+  {
+    "name": "ASDL",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 1,
+    "time": "17:00"
+  },
+  {
+    "name": "ASDL",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 3,
+    "time": "15:00"
+  },
+  {
+    "name": "ED",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 1,
+    "time": "20:40"
+  },
+  {
+    "name": "ED",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 3,
+    "time": "19:00"
+  },
+  {
+    "name": "Circuitos ",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 4,
+    "time": "13:00"
+  },
+  {
+    "name": "AoC",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 4,
+    "time": "15:00"
+  },
+  {
+    "name": "Comp.Ev",
+    "origin": {
+      "name": "UFMG"
+    },
+    "completed": false,
+    "type": "recurring",
+    "weekDay": 4,
+    "time": "17:00"
   }
 ]
